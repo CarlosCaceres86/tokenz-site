@@ -1,0 +1,103 @@
+/* Web rendition of Tokenz's shared Compose components. Keep source references in README. */
+:root { --app-border:#e4eaf2; --positive-border:#ceedE8; --points-border:#d9c5f7 }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+figure { margin:0 }
+.app-phone { position:relative; z-index:1; width:300px; max-width:100% }
+.app-phone>img { width:100%; border:7px solid #fff; border-radius:32px; box-shadow:0 12px 40px #101a4312 }
+.app-phone figcaption { text-align:center; font-size:12px; margin-top:14px; color:var(--secondary) }
+.hero-art { min-height:700px }
+.hero-phone { margin-left:64px }
+.hero-mascot { width:236px; left:-16px; bottom:32px }
+.art-caption { bottom:0; right:0; left:0; text-align:center }
+.hero-blob { top:14%; height:70% }
+.screenshots-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; margin-top:48px }
+.screenshots-grid figure { max-width:282px; margin:auto; width:100% }
+.screenshots-grid img { width:100%; border-radius:24px; border:1px solid var(--app-border); box-shadow:0 8px 24px #101a430d }
+.screenshots-grid a { display:block; border-radius:24px }
+.screenshots-grid figcaption { margin-top:20px; text-align:center; font-size:14px; line-height:1.6 }
+.screenshots-grid figcaption strong,.screenshots-grid figcaption span { display:block }
+.screenshots-grid figcaption span { color:var(--secondary); margin-top:4px }
+.demo-layout { grid-template-columns:minmax(0,1fr) minmax(0,440px); gap:64px }
+.demo-shell { width:100%; max-width:440px; justify-self:center }
+.demo-label { font-size:13px; margin-bottom:12px; text-align:center }
+.demo-board { padding:16px; border:1px solid var(--app-border); border-radius:24px; min-height:760px; background:var(--background) url('assets/board-background.png') center/cover no-repeat; box-shadow:0 10px 30px #101a4310; line-height:1.375; color:var(--navy) }
+.app-header { display:flex; align-items:center; gap:8px; padding-block:12px }
+.app-menu { display:grid; place-items:center; width:48px; height:48px; flex:none }
+.app-menu img { width:24px; height:24px }
+.app-avatar { width:48px; height:48px; object-fit:contain; flex:none }
+.app-header h3 { font-size:24px; line-height:30px; letter-spacing:0; flex:1 }
+.app-balance { background:var(--lavender); border:1px solid #6c3bce; color:var(--purple); border-radius:18px; padding:4px 12px; text-align:center; flex:none; min-width:108px }
+.app-balance small { font-size:13px; line-height:18px; display:block }
+.app-balance strong { display:flex; justify-content:center; align-items:center; gap:8px; font-size:16px; line-height:22px }
+.app-balance img { width:20px; height:20px }
+.board-scroll { padding-block:12px }
+.app-progress { padding:12px; border:1px solid var(--app-border); background:#fff; border-radius:24px; box-shadow:0 1px 1px #101a4320; margin-bottom:12px }
+.app-progress>p { font-size:13px; line-height:18px; margin-bottom:8px }
+.progress-days { display:flex; gap:4px }
+.progress-day { display:flex; flex:1; min-width:0; flex-direction:column; align-items:center; gap:4px; font-size:13px; line-height:18px }
+.progress-day strong { font-size:16px; line-height:22px }
+.progress-day small { color:var(--secondary); font-size:13px }
+.progress-track { display:flex; align-items:flex-end; justify-content:center; height:48px; width:100% }
+.progress-track>span { width:14px; border-radius:4px; background:var(--teal); height:0 }
+.app-tabs { display:flex; gap:4px; margin-bottom:12px }
+.app-tabs button { display:flex; align-items:center; gap:8px; width:50%; min-height:48px; padding:12px; border-radius:24px 24px 0 0; border:1px solid var(--app-border); background:#eaf5ff; color:var(--secondary); text-align:left; font-size:16px; line-height:22px; font-weight:700; cursor:pointer }
+.app-tabs button[aria-selected=true] { background:#fff; color:var(--teal-dark); border-color:var(--teal-dark) }
+.app-tabs img { width:24px; height:24px; flex:none }
+.app-card { display:flex; align-items:center; padding:12px; width:100%; margin-top:12px; border:1px solid var(--app-border); border-radius:24px; background:#fff; box-shadow:0 1px 1px #101a4320; text-align:left; cursor:pointer; color:var(--navy); min-height:98px }
+.app-card:first-child { margin-top:0 }
+.app-card .card-art { width:72px; height:72px; object-fit:contain; flex:none }
+.card-copy { flex:1; min-width:0; padding-inline:8px; display:flex; flex-direction:column }
+.card-copy strong { font-size:16px; line-height:22px; font-weight:700; overflow-wrap:anywhere }
+.card-copy small { color:var(--secondary); font-size:13px; line-height:18px }
+.card-actions { display:flex; align-items:center; gap:8px; flex:none }
+.app-points { display:inline-block; background:var(--lavender); border:1px solid var(--points-border); border-radius:12px; padding:8px 12px; color:var(--purple); font-size:16px; line-height:22px; font-weight:700; white-space:nowrap }
+.norm-value { background:var(--mint); border-color:var(--positive-border); color:var(--teal-dark) }
+.check-slot { display:grid; place-items:center; width:48px; height:48px }
+.completion-check { width:48px; height:48px; display:grid; place-items:center; border-radius:50%; color:#fff; font-size:26px; background:var(--teal-dark); visibility:hidden }
+.norm-button[aria-checked=true],.reward-button[data-available=true] { background:var(--mint); border-color:var(--positive-border) }
+.norm-button[aria-checked=true] .completion-check { visibility:visible }
+.norm-button.celebrating .completion-check { animation:tokenz-check 500ms ease-out }
+@keyframes tokenz-check { 0% { transform:scale(.7) } 36% { transform:scale(1.15) } 68% { transform:scale(.95) } 100% { transform:scale(1) } }
+.app-guidance { padding:12px; font-size:13px; line-height:18px; margin-top:12px }
+.card-actions>img { width:24px; height:24px }
+.app-feedback { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:12px; margin-top:12px; border-radius:24px; background:var(--mint); border:1px solid var(--app-border) }
+.app-feedback>img { width:48px; height:48px; flex:none }
+.app-feedback p { flex:1; font-size:16px; line-height:22px; color:var(--navy) }
+.app-feedback button { width:100%; background:#fff; border:1px solid var(--points-border); border-radius:18px; min-height:48px; font-size:16px; font-weight:700; color:var(--purple); cursor:pointer }
+.reset-button { display:block; margin:8px auto 0; padding:12px; min-height:48px; border:0; background:none; color:var(--teal-dark); font-size:14px; font-weight:700; cursor:pointer; text-decoration:underline; text-underline-offset:3px }
+#reward-dialog { width:min(420px,calc(100% - 48px)); max-height:calc(100dvh - 48px); border:1px solid var(--app-border); border-radius:24px; padding:24px; color:var(--navy); box-shadow:0 8px 24px #101a4330 }
+#reward-dialog::backdrop { background:#0009 }
+.dialog-content { display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; padding:0 }
+.dialog-content>img { width:112px; height:112px; object-fit:contain; background:var(--lavender); border-radius:12px; margin:0 }
+.dialog-content h2 { font-size:24px; line-height:30px; letter-spacing:0 }
+.dialog-content p { font-size:16px; line-height:22px; margin:0 }
+.dialog-actions { display:flex; flex-direction:column; gap:16px; width:100%; margin:0 }
+.dialog-actions button { width:100%; min-height:48px; border-radius:18px; padding:12px; font-size:16px; line-height:22px; font-weight:700 }
+.dialog-actions .secondary-action { border:1px solid var(--points-border); background:#fff; color:var(--purple) }
+@media(max-width:1000px) { .hero-art { min-height:650px } .hero-phone { width:270px; margin-left:32px } .hero-mascot { width:190px; left:-8px } .demo-layout { gap:32px } }
+@media(max-width:800px) { .demo-layout { grid-template-columns:1fr } .demo-copy { max-width:560px } .screenshots-grid { gap:20px } }
+@media(max-width:640px) { .hero-art { width:min(380px,100%); min-height:650px } .hero-phone { width:268px; margin-left:54px } .hero-mascot { width:190px; left:-4px; bottom:36px } .art-caption { font-size:11px } .screenshots-grid { grid-template-columns:1fr; gap:36px; margin-top:32px } .screenshots-grid figure { max-width:280px } .demo-board { border-radius:24px; padding:16px } }
+/* Compact widths stack card actions instead of reducing the app's text/artwork. */
+@media(max-width:360px) { .app-header { gap:4px; flex-wrap:wrap } .app-menu { width:40px } .app-header h3 { font-size:24px } .app-balance { min-width:92px; padding-inline:8px } .app-tabs button { padding:10px 8px; gap:4px } .app-tabs img { width:20px; height:20px } .app-card { flex-wrap:wrap } .card-copy { min-width:100px } .card-actions { margin:4px 0 0 80px } .hero-phone { margin-left:26px; width:250px } .hero-art { min-height:602px } .hero-mascot { width:165px } }
+@media(prefers-reduced-motion:reduce) { .norm-button.celebrating .completion-check { animation:none } }
+
+@media(max-width:640px) { .demo-layout { width:calc(100% - 32px) } .demo-copy { padding-inline:16px } }
+
+/* Native scaffold: header and feedback stay visible; progress/cards scroll, tabs stick. */
+.demo-board { display:flex; flex-direction:column; height:760px }
+.app-header { flex:none }
+.board-scroll { flex:1; min-height:0; overflow:auto; scrollbar-width:thin }
+.app-tabs { position:sticky; top:0; z-index:1; background:var(--background) }
+.app-feedback { flex:none }
+#reward-dialog-description { white-space:pre-line }
+/* Bring the mascot into the first view on desktop and ahead of the phone on mobile. */
+.hero-mascot { top:28px; bottom:auto }
+@media(max-width:640px) {
+  .hero-art { display:flex; flex-direction:column; align-items:center; gap:20px; min-height:0 }
+  .hero-mascot { position:relative; top:auto; left:auto; bottom:auto; order:0; width:160px }
+  .hero-phone { order:1; margin:0; width:268px }
+  .art-caption { order:2; position:static; margin-top:0 }
+}
+@media(max-width:640px) { .demo-shell { width:calc(100% + 32px); margin-inline:-16px } }
+
+.app-balance small,.app-progress>p,.progress-day,.card-copy small,.app-guidance { font-weight:600 }

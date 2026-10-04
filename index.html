@@ -13,8 +13,9 @@
   <link rel="canonical" href="https://carloscaceres86.github.io/tokenz-site/">
   <link rel="icon" type="image/png" href="assets/star.png">
   <link rel="preload" href="assets/fonts/nunito-extrabold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="styles.css?v=20261004">
+  <link rel="stylesheet" href="app-preview.css?v=20261004">
+  <script type="module" src="app.js?v=20261004"></script>
   <title>Tokenz · Pequeños logros, grandes sonrisas</title>
 </head>
 <body>
@@ -35,21 +36,11 @@
         <div class="hero-actions"><a class="action" href="#demo">Descubre el tablero <span aria-hidden="true">→</span></a><a class="text-action" href="#como-funciona">¿Cómo funciona? <span aria-hidden="true">↘</span></a></div>
         <p class="availability"><span aria-hidden="true"></span> Estamos preparando nuestra llegada a Google Play.</p>
       </div>
-      <div class="hero-art" role="img" aria-label="Vista ilustrativa de un tablero Tokenz: Leo tiene 12 puntos y ha completado recoger sus juguetes.">
-        <div class="hero-backdrop" aria-hidden="true"><div class="hero-blob"></div></div><span class="art-spark spark-one" aria-hidden="true">✦</span><span class="art-spark spark-two" aria-hidden="true">✧</span>
-        <div class="phone-preview" aria-hidden="true">
-          <div class="phone-top"><span>9:41</span><span>● ● ▰</span></div>
-          <div class="preview-heading"><img src="assets/avatar-leo.png" width="48" height="48" alt=""><div><small>¡Hola, Leo!</small><strong>Mi tablero</strong></div><span class="preview-menu">☰</span></div>
-          <div class="preview-balance"><div><span>Mis puntos</span><strong>12 <small>pts</small></strong></div><img src="assets/mascot.png" width="86" height="86" alt=""></div>
-          <div class="preview-week"><small>Una semana de pequeños logros</small><div class="week-days"><span>L<b>★</b></span><span>M<b>★</b></span><span>X<b>★</b></span><span>J<b>★</b></span><span>V<b>·</b></span><span>S<b>·</b></span><span>D<b>·</b></span></div></div>
-          <div class="preview-tabs"><span>Mis normas</span><span>Recompensas</span></div>
-          <div class="preview-task"><img src="assets/chores.png" width="62" height="62" alt=""><div><strong>Recoger mis juguetes</strong><small>¡Lo has conseguido!</small></div><span class="preview-check">✓</span></div>
-          <div class="preview-task"><img src="assets/reading.png" width="62" height="62" alt=""><div><strong>Leer un ratito</strong><small>Una aventura más</small></div><span class="preview-points">+3</span></div>
-          <div class="preview-clouds"><span>✦</span><span>✧</span><span>✦</span></div>
-        </div>
-        <div class="floating-note note-achievement"><span class="note-icon" aria-hidden="true">✓</span><div><strong>¡Un logro más!</strong><span>Lo pequeño también cuenta.</span></div></div>
-        <img class="floating-star" src="assets/star.png" width="160" height="160" alt="" aria-hidden="true">
-        <span class="art-caption">Así se siente un pequeño gran logro.</span>
+      <div class="hero-art">
+        <div class="hero-backdrop" aria-hidden="true"><div class="hero-blob"></div></div>
+        <figure class="app-phone hero-phone"><img src="assets/screenshots/board-norms.png" width="402" height="874" alt="Captura real de Tokenz: tablero de Ada con saldo, progreso semanal y normas"><figcaption>El tablero, tal como lo verás en la app.</figcaption></figure>
+        <img class="hero-mascot" src="assets/mascot.png" width="360" height="360" alt="La mascota de Tokenz: una ficha amarilla con una gran sonrisa">
+        <span class="art-caption">La sonrisa de Tokenz, en cada pequeño logro.</span>
       </div>
     </section>
 
@@ -66,19 +57,38 @@
 
     <section class="demo-section" id="demo" aria-labelledby="demo-title">
       <div class="container demo-layout">
-        <div class="demo-copy"><p class="eyebrow">UN TABLERO LLENO DE POSIBILIDADES</p><h2 id="demo-title">¿Y si lo<br>probamos?</h2><p>Marca una norma, mira cómo suman los puntos y descubre una recompensa. Así de sencillo.</p><p class="demo-instruction"><span aria-hidden="true">↗</span> Prueba las tarjetas de este tablero.</p><div class="demo-note"><span aria-hidden="true">✦</span><p>Es solo un ejemplo con datos inventados. Puedes jugar sin crear una cuenta; al recargar, todo vuelve a empezar.</p></div></div>
-        <div class="demo-board" aria-label="Tablero de demostración">
-          <div class="demo-heading"><div class="demo-person"><img src="assets/avatar.png" width="54" height="54" alt=""><div><small>Tablero de ejemplo</small><h3>Ada</h3></div></div><div class="points-badge"><small>Mis puntos</small><strong><span id="demo-balance">0</span> <span>pts</span></strong></div></div>
-          <div class="demo-tabs" role="tablist" aria-label="Categorías del tablero"><button type="button" role="tab" id="norms-tab" aria-selected="true" aria-controls="norms-panel" tabindex="0">Mis normas</button><button type="button" role="tab" id="rewards-tab" aria-selected="false" aria-controls="rewards-panel" tabindex="-1">Recompensas</button></div>
-          <div role="tabpanel" id="norms-panel" aria-labelledby="norms-tab">
-            <button type="button" class="norm-button" data-norm="chores" aria-pressed="false"><img src="assets/chores.png" width="72" height="72" alt=""><span class="norm-copy"><strong>Recoger los juguetes</strong><small>Pendiente</small></span><span class="norm-value">+2 pts</span></button>
-            <button type="button" class="norm-button" data-norm="teeth" aria-pressed="false"><img src="assets/teeth.png" width="72" height="72" alt=""><span class="norm-copy"><strong>Lavarse los dientes</strong><small>Pendiente</small></span><span class="norm-value">+2 pts</span></button>
-            <button type="button" class="norm-button" data-norm="reading" aria-pressed="false"><img src="assets/reading.png" width="72" height="72" alt=""><span class="norm-copy"><strong>Leer un ratito</strong><small>Pendiente</small></span><span class="norm-value">+3 pts</span></button>
+        <div class="demo-copy"><img class="demo-mascot" src="assets/mascot-guide.png" width="148" height="148" alt="La mascota de Tokenz te acompaña" loading="lazy"><p class="eyebrow">UN TABLERO LLENO DE POSIBILIDADES</p><h2 id="demo-title">¿Y si lo<br> probamos?</h2><p>El mismo diseño del tablero de Tokenz. Marca una norma, mira el saldo y canjea una recompensa.</p><p class="demo-instruction"><span aria-hidden="true">↗</span> Prueba las tarjetas de este tablero.</p><div class="demo-note"><span aria-hidden="true">✦</span><p>Es solo un ejemplo con datos inventados. Puedes jugar sin crear una cuenta; al recargar, todo vuelve a empezar.</p></div></div>
+        <div class="demo-shell">
+          <p class="demo-label">Demo interactiva · Normas y recompensas</p>
+          <div class="demo-board" aria-label="Tablero de demostración de Ada">
+            <div class="app-header"><span class="app-menu" aria-hidden="true"><img src="assets/menu.png" width="24" height="24" alt=""></span><img class="app-avatar" src="assets/avatar.png" width="48" height="48" alt=""><h3>Ada</h3><div class="app-balance"><small>Saldo</small><strong><img src="assets/star.png" width="20" height="20" alt=""><span id="demo-balance">0</span> pts</strong></div></div>
+            <div class="board-scroll">
+              <div class="app-progress"><p>Progreso semanal</p><div class="progress-days"><div class="progress-day" aria-label="Lunes: 0 puntos"><strong>L</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div><div class="progress-day" aria-label="Martes: 0 puntos"><strong>M</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div><div class="progress-day" aria-label="Miércoles: 0 puntos"><strong>X</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div><div class="progress-day" aria-label="Jueves: 0 puntos"><strong>J</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div><div class="progress-day" aria-label="Viernes: 0 puntos"><strong>V</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div><div class="progress-day" aria-label="Sábado: 0 puntos"><strong>S</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div><div class="progress-day" aria-label="Domingo: 0 puntos"><strong>D</strong><span class="progress-value">0</span><div class="progress-track"><span></span></div><small>pts</small></div></div></div>
+              <div class="app-tabs" role="tablist" aria-label="Categorías del tablero"><button type="button" role="tab" id="norms-tab" aria-selected="true" aria-controls="norms-panel" tabindex="0"><img src="assets/norms.png" width="24" height="24" alt="">Normas</button><button type="button" role="tab" id="rewards-tab" aria-selected="false" aria-controls="rewards-panel" tabindex="-1"><img src="assets/rewards.png" width="24" height="24" alt="">Recompensas</button></div>
+              <div role="tabpanel" id="norms-panel" aria-labelledby="norms-tab">
+            <button type="button" class="app-card norm-button" data-norm="chores" role="switch" aria-checked="false"><img class="card-art" src="assets/chores.png" width="72" height="72" alt=""><span class="card-copy"><strong>Recoger los juguetes</strong><small>Pendiente</small></span><span class="card-actions"><span class="norm-value app-points">+2 pts</span><span class="check-slot" aria-hidden="true"><span class="completion-check">✓</span></span></span></button>
+            <button type="button" class="app-card norm-button" data-norm="teeth" role="switch" aria-checked="false"><img class="card-art" src="assets/teeth.png" width="72" height="72" alt=""><span class="card-copy"><strong>Lavarse los dientes</strong><small>Pendiente</small></span><span class="card-actions"><span class="norm-value app-points">+2 pts</span><span class="check-slot" aria-hidden="true"><span class="completion-check">✓</span></span></span></button>
+            <button type="button" class="app-card norm-button" data-norm="reading" role="switch" aria-checked="false"><img class="card-art" src="assets/reading.png" width="72" height="72" alt=""><span class="card-copy"><strong>Leer un ratito</strong><small>Pendiente</small></span><span class="card-actions"><span class="norm-value app-points">+3 pts</span><span class="check-slot" aria-hidden="true"><span class="completion-check">✓</span></span></span></button>
+                <p class="app-guidance">Si marcaste una norma por error, puedes desmarcarla y los puntos se quitarán.</p>
+              </div>
+              <div role="tabpanel" id="rewards-panel" aria-labelledby="rewards-tab" hidden><button type="button" class="app-card reward-button" id="reward-open"><img class="card-art" src="assets/pizza.png" width="72" height="72" alt=""><span class="card-copy"><strong>Noche de pizza en familia</strong><small id="reward-status">No hay puntos suficientes</small></span><span class="card-actions"><span class="app-points">5 pts</span><img id="reward-lock" src="assets/lock.png" width="24" height="24" alt=""></span></button><p class="app-guidance">Canjea tus puntos por recompensas.</p></div>
+
+            </div>
+              <div class="app-feedback" id="demo-feedback" hidden><img src="assets/mascot-celebrate.png" width="48" height="48" alt=""><p id="demo-message" role="status" aria-live="polite"></p><button type="button" id="feedback-dismiss">Cerrar</button></div>
+            <noscript><p class="noscript-note">Activa JavaScript para jugar con este ejemplo. El resto de la web funciona sin él.</p></noscript>
           </div>
-          <div role="tabpanel" id="rewards-panel" aria-labelledby="rewards-tab" hidden><button type="button" class="reward-button" id="reward-open"><img src="assets/pizza.png" width="112" height="112" alt=""><span><strong>Noche de pizza en familia</strong><small id="reward-status">Te faltan 5 puntos</small></span><b>5 pts</b></button></div>
-          <div class="demo-bottom"><p id="demo-message" role="status" aria-live="polite">¡Todo empieza con un pequeño paso!</p><button type="button" class="reset-button" id="demo-reset">Empezar de nuevo <span aria-hidden="true">↻</span></button></div>
-          <noscript><p class="noscript-note">Activa JavaScript para jugar con este ejemplo. El resto de la web funciona sin él.</p></noscript>
+          <button type="button" class="reset-button" id="demo-reset">Empezar de nuevo <span aria-hidden="true">↻</span></button>
+          <p class="sr-only" id="demo-announcement" role="status" aria-live="polite"></p>
         </div>
+      </div>
+    </section>
+
+    <section class="section container screenshots-section" id="app" aria-labelledby="app-title">
+      <div class="section-intro"><p class="eyebrow">ASÍ ES TOKENZ</p><h2 id="app-title">La app, de cerca.</h2><p>Capturas reales de la app en iPhone, con datos de ejemplo.</p></div>
+      <div class="screenshots-grid">
+        <figure><a href="assets/screenshots/welcome.png" aria-label="Ampliar captura de bienvenida"><img src="assets/screenshots/welcome.png" width="402" height="874" alt="Bienvenida de Tokenz con su mascota y acceso a la cuenta" loading="lazy"></a><figcaption><strong>Una bienvenida con su sonrisa.</strong><span>La mascota os acompaña desde el principio.</span></figcaption></figure>
+        <figure><a href="assets/screenshots/board-norms.png" aria-label="Ampliar captura del tablero"><img src="assets/screenshots/board-norms.png" width="402" height="874" alt="Tablero de Ada: saldo, progreso semanal y tarjetas de normas" loading="lazy"></a><figcaption><strong>Cada pequeño avance cuenta.</strong><span>Normas, puntos y progreso en un mismo tablero.</span></figcaption></figure>
+        <figure><a href="assets/screenshots/reward-confirm.png" aria-label="Ampliar captura de una recompensa"><img src="assets/screenshots/reward-confirm.png" width="402" height="874" alt="Confirmación de canje de una recompensa con su coste y saldo" loading="lazy"></a><figcaption><strong>Un momento para celebrar.</strong><span>Elegid una recompensa y confirmad el canje.</span></figcaption></figure>
       </div>
     </section>
 
@@ -93,9 +103,9 @@
       <details><summary>¿Esta demo guarda información de mi familia?<span aria-hidden="true">+</span></summary><p>No. El tablero de esta web usa datos ficticios y funciona en la memoria de tu navegador. No hay registro, formularios ni conexión a una cuenta Tokenz. Al recargar la página, el ejemplo se reinicia. Puedes consultar más detalles en <a href="privacy/">Privacidad de esta web</a>.</p></details>
     </div></section>
 
-    <section class="closing-section"><div class="container closing-inner"><div><p class="eyebrow">PASITO A PASITO</p><h2>Un poquito de ilusión.<br>Todos los días.</h2><p>Las grandes sonrisas empiezan por los pequeños logros.</p><a class="action" href="#demo">Volver a probar el tablero <span aria-hidden="true">↗</span></a></div><img src="assets/mascot.png" width="280" height="280" alt="Mascota sonriente de Tokenz" loading="lazy"></div></section>
+    <section class="closing-section"><div class="container closing-inner"><div><p class="eyebrow">PASITO A PASITO</p><h2>Un poquito de ilusión.<br>Todos los días.</h2><p>Las grandes sonrisas empiezan por los pequeños logros.</p><a class="action" href="#demo">Volver a probar el tablero <span aria-hidden="true">↗</span></a></div><img src="assets/mascot-celebrate.png" width="280" height="280" alt="La mascota de Tokenz celebra los pequeños logros" loading="lazy"></div></section>
   </main>
-  <footer class="site-footer container"><a class="brand" href="./" aria-label="Tokenz, inicio"><span>Tokenz<span class="brand-dot">.</span></span></a><p>Pequeños logros, grandes sonrisas.</p><nav aria-label="Información"><a href="help/">Ayuda y contacto</a><a href="privacy/">Privacidad</a></nav><small>© 2026 Tokenz</small></footer>
-  <dialog id="reward-dialog" aria-labelledby="reward-dialog-title" aria-describedby="reward-dialog-description"><div class="dialog-content"><img src="assets/pizza.png" width="136" height="136" alt=""><h2 id="reward-dialog-title">¿Canjeamos esta recompensa?</h2><p id="reward-dialog-description">Se descontarán 5 puntos del tablero de ejemplo.</p><div class="dialog-actions"><button type="button" class="action" id="reward-confirm">¡A disfrutar!</button><button type="button" class="secondary-action" id="reward-cancel">Volver al tablero</button></div></div></dialog>
+  <footer class="site-footer container"><a class="brand" href="./" aria-label="Tokenz, inicio"><img src="assets/mascot.png" width="52" height="52" alt=""><span>Tokenz<span class="brand-dot">.</span></span></a><p>Pequeños logros, grandes sonrisas.</p><nav aria-label="Información"><a href="help/">Ayuda y contacto</a><a href="privacy/">Privacidad</a></nav><small>© 2026 Tokenz</small></footer>
+  <dialog id="reward-dialog" aria-labelledby="reward-dialog-title" aria-describedby="reward-dialog-description"><div class="dialog-content"><img src="assets/pizza.png" width="112" height="112" alt=""><h2 id="reward-dialog-title">¿Canjear recompensa?</h2><p id="reward-dialog-description">Noche de pizza en familia<br>Se descontarán 5 puntos del saldo.</p><span class="app-points">5 pts</span><p id="reward-dialog-balance">Saldo: 0 puntos</p><div class="dialog-actions"><button type="button" class="action" id="reward-confirm">Canjear</button><button type="button" class="secondary-action" id="reward-cancel">Cancelar</button><button type="button" class="action" id="reward-acknowledge" hidden>Entendido</button></div></div></dialog>
 </body>
 </html>

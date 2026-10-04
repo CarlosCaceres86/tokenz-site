@@ -24,6 +24,10 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+      - name: Validate website
+        run: |
+          node --test tests/demo.test.mjs
+          python3 scripts/check_site.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact

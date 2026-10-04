@@ -60,10 +60,11 @@ for path, doc in documents.items():
             errors.append(f'{path.relative_to(ROOT)}: missing fragment {link}')
         checked += 1
 
-for link in re.findall(r'url\([\'"]?([^\)\'\"]+)', (ROOT / 'styles.css').read_text()):
-    if not (ROOT / link).is_file():
-        errors.append(f'Missing CSS resource {link}')
-    checked += 1
+for css in ROOT.glob('*.css'):
+    for link in re.findall(r'url\([\'"]?([^\)\'"]+)', css.read_text()):
+        if not (css.parent / link).is_file():
+            errors.append(f'Missing CSS resource {link}')
+        checked += 1
 
 if errors:
     raise SystemExit('\n'.join(errors))
