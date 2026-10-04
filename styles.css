@@ -2141,3 +2141,11 @@ dialog::backdrop {
     transform:none
   }
 }
+
+/* The same approved mascot family used by the app. */
+.brand img { transform:none; width:56px; height:56px }
+.hero-mascot { position:absolute; width:230px; left:-30px; bottom:20px; z-index:3; pointer-events:none }
+.floating-note { display:none }
+.demo-mascot { width:124px; margin-bottom:16px }
+@media(max-width:1000px) { .hero-mascot { width:190px; left:-14px } }
+@media(max-width:640px) { .hero-mascot { width:175px; left:-4px; bottom:25px } .demo-mascot { width:100px } }
